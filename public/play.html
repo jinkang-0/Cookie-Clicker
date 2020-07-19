@@ -26,220 +26,216 @@
         
         <!-- theme switch -->
         <i onclick="changeTheme()" id="themeIcon" class="fas fa-mug-hot"></i>
+            
+        <!-- big cookie -->
+        <div class="cookie">
+            <button id="bigCookie" onclick="addCookie()">
+                <img src="../assets/cookie.ico" alt="big cookie">
+            </button>
+        </div>
         
-        <!-- grid system -->
-        <div id="container">
+        <!-- sidebar -->
+        <div id="sidebar" class="sbOpen">
             
-            <!-- big cookie -->
-            <div class="cookie">
-                <button id="bigCookie" onclick="addCookie()">
-                    <img src="../assets/cookie.ico" alt="big cookie">
-                </button>
-            </div>
+            <!-- hamburger icon -->
+            <button id="sbIcon" onclick="hideSidebar()">
+                <i class="fas fa-bars sb_icon"></i>
+            </button>
             
-            <!-- sidebar -->
-            <div id="sidebar">
+            <!-- cookie counts -->
+            <i class="fas fa-cookie-bite c-icon" id="sbCookie"></i>
+            <span id="cookieCount" class="c-count">0</span>
+            
+            <!-- inner sidebar content -->
+            <div id="innerSidebar">
+                <!-- tab buttons -->
+                <div class="tabBtns">
+                    <span id="upgrTabBtn" class="tabBtnActive" onclick="changeTabs(this.id)">Upgrades</span>
+                    <span id="infoTabBtn" class="infoBtn" onclick="changeTabs(this.id)">Info</span>
+                </div>
                 
-                <!-- hamburger icon -->
-                <button id="sbIcon" onclick="hideSidebar()">
-                    <i class="fas fa-bars sb_icon"></i>
-                </button>
-                
-                <!-- cookie counts -->
-                <i class="fas fa-cookie-bite" id="sbCookie"></i>
-                <span id="cookieCount">0</span>
-                
-                <!-- inner sidebar content -->
-                <div id="innerSidebar">
-                    <!-- tab buttons -->
-                    <div class="tabBtns">
-                        <span id="upgrTabBtn" class="tabBtnActive" onclick="changeTabs(this.id)">Upgrades</span>
-                        <span id="infoTabBtn" class="infoBtn" onclick="changeTabs(this.id)">Info</span>
-                    </div>
-                    
-                    <!-- upgrades tab -->
-                    <div id="upgrades" class="tab">
-                        <div class="overflow">
-                            <div class="upgrInfo">
-                                <img id="clickImg" class="upgrImg" src="../assets/chocolate.png" alt="upgradeImg">
-                                <div style="margin-left: 0.5rem;">
-                                    <span id="clickName" class="upgrName">Chocolate Touches</span>
-                                    <span id="clickDesc" class="upgrDesc">Finish a cookie with some chocolate touches.</span>
-                                    <span id="clickUpgr" class="upgrDetail">+1cpc</span>
-                                </div>
+                <!-- upgrades tab -->
+                <div id="upgrades" class="tab">
+                    <div class="overflow">
+                        <div class="upgrInfo">
+                            <img id="clickImg" class="upgrImg" src="../assets/chocolate.png" alt="upgradeImg">
+                            <div style="margin-left: 0.5rem;">
+                                <span id="clickName" class="upgrName">Chocolate Touches</span> <br>
+                                <span id="clickDesc" class="upgrDesc">Finish a cookie with some chocolate touches.</span> <br>
+                                <span id="clickUpgr" class="upgrDetail">+1cpc</span>
                             </div>
-                            <span id="priceClick" class="upgrPrice">50</span>
-                            <i class="fas fa-cookie-bite priceIcon"></i>
-                            <button id="buyClick" class="buyUpgrDisabled" onclick="clickUpgrade()">UPGRADE</button>
-                            
-                            <br> <br>
-                            <hr style="border-color: black; width: 80%;">
-                            <br>
-                            
-                            <div class="upgrInfo">
-                                <img class="upgrImg" src="../assets/baker.svg" alt="upgradeImg">
-                                <div style="margin-left: 0.5rem;">
-                                    <span class="upgrName">Bakery Employee</span>
-                                    <span class="upgrDesc">Get an extra helping hand.</span>
-                                    <span class="upgrDetail">+1cps</span>
-                                </div>
-                            </div>
-                            <span id="priceBaker" class="upgrPrice">100</span>
-                            <i class="fas fa-cookie-bite priceIcon"></i>
-                            <button id="buyBaker" class="buyUpgrDisabled" onclick="purchase(this.id, `Baker`)">UPGRADE</button>
-                            
-                            <div class="extraHelpers salesman">
-                                <div class="upgrInfo">
-                                    <img class="upgrImg" src="../assets/salesman.png" alt="upgradeImg">
-                                    <div style="margin-left: 0.5rem;">
-                                        <span class="upgrName">Cookie Salesman</span>
-                                        <span class="upgrDesc">Spreads the word around.</span>
-                                        <span class="upgrDetail">+5cps</span>
-                                    </div>
-                                </div>
-                                <span id="priceSalesman" class="upgrPrice">100</span>
-                                <i class="fas fa-cookie-bite priceIcon"></i>
-                                <button id="buySalesman" class="buyUpgrDisabled" onclick="purchase(this.id, `Salesman`)">UPGRADE</button>
-                            </div>
-                            
-                            <div class="extraHelpers grandma">
-                                <div class="upgrInfo">
-                                    <img class="upgrImg" src="../assets/grandma.png" alt="upgradeImg">
-                                    <div style="margin-left: 0.5rem;">
-                                        <span class="upgrName">Grandma</span>
-                                        <span class="upgrDesc">The best cookie maker in the family.</span>
-                                        <span class="upgrDetail">+10cps</span>
-                                    </div>
-                                </div>
-                                <span id="priceGrandma" class="upgrPrice">100</span>
-                                <i class="fas fa-cookie-bite priceIcon"></i>
-                                <button id="buyGrandma" class="buyUpgrDisabled" onclick="purchase(this.id, `Grandma`)">UPGRADE</button>
-                            </div>
-                            
-                            <div class="extraHelpers proBaker">
-                                <div class="upgrInfo">
-                                    <img class="upgrImg" src="../assets/baker2.png" alt="upgradeImg">
-                                    <div style="margin-left: 0.5rem;">
-                                        <span class="upgrName">Professional Baker</span>
-                                        <span class="upgrDesc">Let the professional handle it.</span>
-                                        <span class="upgrDetail">+20cps</span>
-                                    </div>
-                                </div>
-                                <span id="priceProBaker" class="upgrPrice">100</span>
-                                <i class="fas fa-cookie-bite priceIcon"></i>
-                                <button id="buyProBaker" class="buyUpgrDisabled" onclick="purchase(this.id, `ProBaker`)">UPGRADE</button>
-                            </div>
-                            
-                            <div class="extraHelpers autoMaker">
-                                <div class="upgrInfo">
-                                    <img class="upgrImg" src="../assets/machine.svg" alt="upgradeImg">
-                                    <div style="margin-left: 0.5rem;">
-                                        <span class="upgrName">Auto Cookie Maker</span>
-                                        <span class="upgrDesc">Creates cookies without labor!</span>
-                                        <span class="upgrDetail">+50cps</span>
-                                    </div>
-                                </div>
-                                <span id="priceAutoMaker" class="upgrPrice">100</span>
-                                <i class="fas fa-cookie-bite priceIcon"></i>
-                                <button id="buyAutoMaker" class="buyUpgrDisabled" onclick="purchase(this.id, `AutoMaker`)">UPGRADE</button>
-                            </div>
-                            
-                            <div class="extraHelpers factory">
-                                <div class="upgrInfo">
-                                    <img class="upgrImg" src="../assets/factory.png" alt="upgradeImg">
-                                    <div style="margin-left: 0.5rem;">
-                                        <span class="upgrName">Cookie Factory</span>
-                                        <span class="upgrDesc">Upgrades people, upgrades!</span>
-                                        <span class="upgrDetail">+75cps</span>
-                                    </div>
-                                </div>
-                                <span id="priceFactory" class="upgrPrice">100</span>
-                                <i class="fas fa-cookie-bite priceIcon"></i>
-                                <button id="buyFactory" class="buyUpgrDisabled" onclick="purchase(this.id, `Factory`)">UPGRADE</button>
-                            </div>
-                            
-                            <div class="extraHelpers central">
-                                <div class="upgrInfo">
-                                    <img class="upgrImg" src="../assets/central.png" alt="upgradeImg">
-                                    <div style="margin-left: 0.5rem;">
-                                        <span class="upgrName">G Cookie Central</span>
-                                        <span class="upgrDesc">The center of all cookie attention.</span>
-                                        <span class="upgrDetail">+100cps</span>
-                                    </div>
-                                </div>
-                                <span id="priceCentral" class="upgrPrice">100</span>
-                                <i class="fas fa-cookie-bite priceIcon"></i>
-                                <button id="buyCentral" class="buyUpgrDisabled" onclick="purchase(this.id, `Central`)">UPGRADE</button>
-                            </div>
-                            
                         </div>
-                    </div>
-                    
-                    <!-- info tab -->
-                    <div id="info" class="tab">
-                        <div class="overflow">
-                            <!-- total time played -->
-                            <span class="infoLabel">Time Played:</span>
-                            <span class="infoText" id="timeTotal">00:00</span>
-                            <br>
-                            
-                            <!-- general info -->
-                            <span class="infoLabel">Total Clicks: </span>
-                            <span class="infoText" id="clickTotal">0</span>
-                            <br>
-                            
-                            <!-- cookies per click -->
-                            <span class="infoLabel">Cookies per click:</span>
-                            <span class="infoText" id="cpc">1</span>
-                            <br>
-                            
-                            <!-- cookies per second -->
-                            <span class="infoLabel">Cookies per second:</span>
-                            <span class="infoText" id="cps">0</span>
-                            <br> <br>
-                            
-                            <!-- helpers -->
-                            <span class="infoLabel">Bakery Employees:</span>
-                            <span class="infoText" id="bakers">0</span>
-                            <br>
-                            
-                            <!-- cookie salesmen -->
-                            <div class="lateHelpers salesman">
-                                <span class="infoLabel">Cookie Salesmen:</span>
-                                <span class="infoText" id="salesmen">0</span>
+                        <span id="priceClick" class="upgrPrice">50</span>
+                        <i class="fas fa-cookie-bite priceIcon"></i>
+                        <button id="buyClick" class="buyUpgrDisabled" onclick="clickUpgrade()">UPGRADE</button>
+                        
+                        <br> <br>
+                        <hr style="border-color: black; width: 80%;">
+                        <br>
+                        
+                        <div class="upgrInfo">
+                            <img class="upgrImg" src="../assets/baker.svg" alt="upgradeImg">
+                            <div style="margin-left: 0.5rem;">
+                                <span class="upgrName">Bakery Employee</span> <br>
+                                <span class="upgrDesc">Get an extra helping hand.</span> <br>
+                                <span class="upgrDetail">+1cps</span>
                             </div>
-                            
-                            <!-- grandmas -->
-                            <div class="lateHelpers grandma">
-                                <span class="infoLabel">Grandmas:</span>
-                                <span class="infoText" id="grandmas">0</span>
-                            </div>
-                            
-                            <!-- professional bakers -->
-                            <div class="lateHelpers proBaker">
-                                <span class="infoLabel">Professional Bakers:</span>
-                                <span class="infoText" id="proBakers">0</span>
-                            </div>
-                            
-                            <!-- auto cookie makers -->
-                            <div class="lateHelpers autoMaker">
-                                <span class="infoLabel">Auto Cookie Makers:</span>
-                                <span class="infoText" id="autoMakers">0</span>
-                            </div>
-                            
-                            <!-- cookie factories -->
-                            <div class="lateHelpers factory">
-                                <span class="infoLabel">Cookie Factories:</span>
-                                <span class="infoText" id="factories">0</span>
-                            </div>
-                            
-                            <!-- grand cookie centrals -->
-                            <div class="lateHelpers central">
-                                <span class="infoLabel">Grand Cookie Centrals:</span>
-                                <span class="infoText" id="centrals">0</span>
-                            </div>
-                            
                         </div>
+                        <span id="priceBaker" class="upgrPrice">100</span>
+                        <i class="fas fa-cookie-bite priceIcon"></i>
+                        <button id="buyBaker" class="buyUpgrDisabled" onclick="purchase(this.id, `Baker`)">UPGRADE</button>
+                        
+                        <div class="extraHelpers salesman">
+                            <div class="upgrInfo">
+                                <img class="upgrImg" src="../assets/salesman.png" alt="upgradeImg">
+                                <div style="margin-left: 0.5rem;">
+                                    <span class="upgrName">Cookie Salesman</span> <br>
+                                    <span class="upgrDesc">Spreads the word around.</span> <br>
+                                    <span class="upgrDetail">+5cps</span>
+                                </div>
+                            </div>
+                            <span id="priceSalesman" class="upgrPrice">100</span>
+                            <i class="fas fa-cookie-bite priceIcon"></i>
+                            <button id="buySalesman" class="buyUpgrDisabled" onclick="purchase(this.id, `Salesman`)">UPGRADE</button>
+                        </div>
+                        
+                        <div class="extraHelpers grandma">
+                            <div class="upgrInfo">
+                                <img class="upgrImg" src="../assets/grandma.png" alt="upgradeImg">
+                                <div style="margin-left: 0.5rem;">
+                                    <span class="upgrName">Grandma</span> <br>
+                                    <span class="upgrDesc">The best cookie maker in the family.</span> <br>
+                                    <span class="upgrDetail">+10cps</span>
+                                </div>
+                            </div>
+                            <span id="priceGrandma" class="upgrPrice">100</span>
+                            <i class="fas fa-cookie-bite priceIcon"></i>
+                            <button id="buyGrandma" class="buyUpgrDisabled" onclick="purchase(this.id, `Grandma`)">UPGRADE</button>
+                        </div>
+                        
+                        <div class="extraHelpers proBaker">
+                            <div class="upgrInfo">
+                                <img class="upgrImg" src="../assets/baker2.png" alt="upgradeImg">
+                                <div style="margin-left: 0.5rem;">
+                                    <span class="upgrName">Professional Baker</span> <br>
+                                    <span class="upgrDesc">Let the professional handle it.</span> <br>
+                                    <span class="upgrDetail">+20cps</span>
+                                </div>
+                            </div>
+                            <span id="priceProBaker" class="upgrPrice">100</span>
+                            <i class="fas fa-cookie-bite priceIcon"></i>
+                            <button id="buyProBaker" class="buyUpgrDisabled" onclick="purchase(this.id, `ProBaker`)">UPGRADE</button>
+                        </div>
+                        
+                        <div class="extraHelpers autoMaker">
+                            <div class="upgrInfo">
+                                <img class="upgrImg" src="../assets/machine.svg" alt="upgradeImg">
+                                <div style="margin-left: 0.5rem;">
+                                    <span class="upgrName">Auto Cookie Maker</span> <br>
+                                    <span class="upgrDesc">Creates cookies without labor!</span> <br>
+                                    <span class="upgrDetail">+50cps</span>
+                                </div>
+                            </div>
+                            <span id="priceAutoMaker" class="upgrPrice">100</span>
+                            <i class="fas fa-cookie-bite priceIcon"></i>
+                            <button id="buyAutoMaker" class="buyUpgrDisabled" onclick="purchase(this.id, `AutoMaker`)">UPGRADE</button>
+                        </div>
+                        
+                        <div class="extraHelpers factory">
+                            <div class="upgrInfo">
+                                <img class="upgrImg" src="../assets/factory.png" alt="upgradeImg">
+                                <div style="margin-left: 0.5rem;">
+                                    <span class="upgrName">Cookie Factory</span> <br>
+                                    <span class="upgrDesc">Upgrades people, upgrades!</span> <br>
+                                    <span class="upgrDetail">+75cps</span>
+                                </div>
+                            </div>
+                            <span id="priceFactory" class="upgrPrice">100</span>
+                            <i class="fas fa-cookie-bite priceIcon"></i>
+                            <button id="buyFactory" class="buyUpgrDisabled" onclick="purchase(this.id, `Factory`)">UPGRADE</button>
+                        </div>
+                        
+                        <div class="extraHelpers central">
+                            <div class="upgrInfo">
+                                <img class="upgrImg" src="../assets/central.png" alt="upgradeImg">
+                                <div style="margin-left: 0.5rem;">
+                                    <span class="upgrName">G Cookie Central</span> <br>
+                                    <span class="upgrDesc">The center of all cookie attention.</span> <br>
+                                    <span class="upgrDetail">+100cps</span>
+                                </div>
+                            </div>
+                            <span id="priceCentral" class="upgrPrice">100</span>
+                            <i class="fas fa-cookie-bite priceIcon"></i>
+                            <button id="buyCentral" class="buyUpgrDisabled" onclick="purchase(this.id, `Central`)">UPGRADE</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- info tab -->
+                <div id="info" class="tab">
+                    <div class="overflow">
+                        <!-- total time played -->
+                        <span class="infoLabel">Time Played:</span>
+                        <span class="infoText" id="timeTotal">00:00</span>
+                        <br>
+                        
+                        <!-- general info -->
+                        <span class="infoLabel">Total Clicks: </span>
+                        <span class="infoText" id="clickTotal">0</span>
+                        <br>
+                        
+                        <!-- cookies per click -->
+                        <span class="infoLabel">Cookies per click:</span>
+                        <span class="infoText" id="cpc">1</span>
+                        <br>
+                        
+                        <!-- cookies per second -->
+                        <span class="infoLabel">Cookies per second:</span>
+                        <span class="infoText" id="cps">0</span>
+                        <br> <br>
+                        
+                        <!-- helpers -->
+                        <span class="infoLabel">Bakery Employees:</span>
+                        <span class="infoText" id="bakers">0</span>
+                        <br>
+                        
+                        <!-- cookie salesmen -->
+                        <div class="lateHelpers salesman">
+                            <span class="infoLabel">Cookie Salesmen:</span>
+                            <span class="infoText" id="salesmen">0</span>
+                        </div>
+                        
+                        <!-- grandmas -->
+                        <div class="lateHelpers grandma">
+                            <span class="infoLabel">Grandmas:</span>
+                            <span class="infoText" id="grandmas">0</span>
+                        </div>
+                        
+                        <!-- professional bakers -->
+                        <div class="lateHelpers proBaker">
+                            <span class="infoLabel">Professional Bakers:</span>
+                            <span class="infoText" id="proBakers">0</span>
+                        </div>
+                        
+                        <!-- auto cookie makers -->
+                        <div class="lateHelpers autoMaker">
+                            <span class="infoLabel">Auto Cookie Makers:</span>
+                            <span class="infoText" id="autoMakers">0</span>
+                        </div>
+                        
+                        <!-- cookie factories -->
+                        <div class="lateHelpers factory">
+                            <span class="infoLabel">Cookie Factories:</span>
+                            <span class="infoText" id="factories">0</span>
+                        </div>
+                        
+                        <!-- grand cookie centrals -->
+                        <div class="lateHelpers central">
+                            <span class="infoLabel">Grand Cookie Centrals:</span>
+                            <span class="infoText" id="centrals">0</span>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

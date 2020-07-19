@@ -23,6 +23,7 @@ img {
 }
 
 ::-webkit-scrollbar {
+    height: 3px;
     width: 3px;
     background: darkslategray;
 }
@@ -54,6 +55,7 @@ img {
     margin-left: -0.25rem;
     color: lightgray;
     cursor: pointer;
+    z-index: 20;
 }
 
 #themeIcon:hover {
@@ -118,20 +120,14 @@ img {
     background-color: #413761;
 }
 
-/* container */
-#container {
-    width: 100%;
-    height: calc(100vh - 3rem);
-    display: grid;
-    grid-template-areas:
-        "left right";
-    grid-template-columns: 5fr 2fr;
-}
-
 /* big cookie */
 .cookie {
+    position: absolute;
+    height: 92%;
+    width: calc(100vw - 35%);
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #bigCookie {
@@ -140,10 +136,7 @@ img {
     background: none;
     outline: none;
     display: block;
-    
-    margin-top: 10vw;
-    height: 50%;
-    grid-area: left;
+    height: 20rem;
 }
 
 #bigCookie img {
@@ -155,7 +148,7 @@ img {
 }
 
 /* sidebar */
-#sidebar {
+.sbOpen {
     background-color: var(--sidebar);
     grid-area: right;
     width: 30%;
@@ -163,6 +156,7 @@ img {
     transition: width 200ms;
     position: absolute;
     right: 0;
+    text-align: left;
 }
 
 .sb_icon {
@@ -184,18 +178,52 @@ img {
 }
 
 /* cookie counts */
-#cookieCount {
+.c-count {
     margin-top: 0.7rem;
     margin-left: 0.3rem;
     color: white;
     text-align: right;
 }
 
-#sbCookie {
+.c-icon {
     color: chocolate;
     margin-top: 0.5rem;
     margin-left: 0.5rem;
     font-size: 2rem;
+}
+
+/* when sidebar is closed */
+.sbClosed {
+    background-color: var(--sidebar);
+    grid-area: right;
+    width: 3.8rem;
+    height: 100vh;
+    transition: width 200ms;
+    position: absolute;
+    right: 0;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.c-icon-c {
+    color: var(--cookie);
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    font-size: 2rem;
+    position: absolute;
+    right: 4rem;
+}
+
+.c-count-c {
+    margin-top: 0.7rem;
+    margin-left: 0.3rem;
+    color: #EFE2B2;
+    text-align: right;
+    position: absolute;
+    right: 6.5rem;
 }
 
 /* tabs */
@@ -354,4 +382,72 @@ img {
 
 .lateHelpers {
     display: none;
+}
+
+/* media queries */
+
+@media (max-width: 750px) {
+    #sidebar {
+        position: relative;
+        top: 100vh;
+        width: calc(100vw - 0.2rem);
+    }
+    
+    #sbIcon {
+        display: none;
+    }
+    
+    .sbClosed {
+        background-color: var(--sidebar);
+        grid-area: right;
+        width: 30%;
+        height: 100vh;
+        transition: width 200ms;
+        position: absolute;
+        right: 0;
+        text-align: left;
+    }
+    
+    .hidden {
+        display: block;
+    }
+    
+    .c-icon-c {
+        color: chocolate;
+        margin-top: 0.5rem;
+        margin-left: 0.5rem;
+        font-size: 2rem;
+        position: relative;
+        left: 0;
+    }
+    
+    .c-count-c {
+        margin-top: 0.7rem;
+        margin-left: 0.3rem;
+        color: white;
+        text-align: right;
+        position: relative;
+        left: 0;
+    }
+    
+    .cookie {
+        width: 100%;
+    }
+    
+    .overflow {
+        overflow: auto;
+        overflow-y: visible;
+        min-height: 80vh;
+        height: auto;
+        background-color: var(--tab);
+        display: block;
+        padding: 0.8rem;
+    }
+    
+    .tab {
+        min-height: calc(100vh - 7.5rem);
+        padding: 0.8rem;
+        background-color: var(--tab);
+        height: auto;
+    }
 }

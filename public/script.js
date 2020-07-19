@@ -78,35 +78,20 @@ function changeTheme() {
 
 function hideSidebar() {
   const inner = document.getElementById("innerSidebar");
-  const container = document.getElementById("container");
   const sidebar = document.getElementById("sidebar");
   const sbCookie = document.getElementById("sbCookie");
   const count = document.getElementById("cookieCount");
   
-  if (inner.style.display == "none") {
-    inner.style.display = "block";
-    sidebar.style.width = "30%";
-    sidebar.style.textAlign = "left";
-    container.style.gridTemplateColumns = "5fr 2fr";
-    // move cookie count
-    sbCookie.style.position = "relative";
-    sbCookie.style.right = "unset";
-    sbCookie.style.color = "chocolate";
-    count.style.position = "relative";
-    count.style.right = "unset";
-    count.style.color = "white";
+  if (inner.className == "hidden") {
+    inner.classList.remove("hidden");
+    sidebar.classList.replace("sbClosed", "sbOpen");
+    sbCookie.classList.replace("c-icon-c", "c-icon");
+    count.classList.replace("c-count-c", "c-count");
   } else {
-    inner.style.display = "none";
-    sidebar.style.width = "3.8rem";
-    sidebar.style.textAlign = "center";
-    container.style.gridTemplateColumns = "11fr 1fr";
-    // move cookie count
-    sbCookie.style.position = "absolute";
-    sbCookie.style.right = "4rem";
-    sbCookie.style.color = "var(--cookie)";
-    count.style.position = "absolute";
-    count.style.right = "6.5rem";
-    count.style.color = "#EFE2B2";
+    inner.classList.add("hidden");
+    sidebar.classList.replace("sbOpen", "sbClosed");
+    sbCookie.classList.replace("c-icon", "c-icon-c");
+    count.classList.replace("c-count", "c-count-c");
   }
 }
 
