@@ -1,0 +1,131 @@
+{
+  "chocolateTouches": {
+    "img": "../assets/chocolate.png",
+    "name": "Chocolate Touches",
+    "desc": "Finish a cookie with some chocolate touches.",
+    "upgr": 1,
+    "price": 50,
+    "next": "refinedDough"
+  },
+  "refinedDough": {
+    "img": "../assets/refine2.png",
+    "name": "Refined Dough",
+    "desc": "Refine the cookie dough.",
+    "upgr": 3,
+    "price": 125,
+    "next": "candyToppings"
+  },
+  "candyToppings": {
+    "img": "../assets/candy.png",
+    "name": "Candy Toppings",
+    "desc": "Sweeten your cookies.",
+    "upgr": 5,
+    "price": 250,
+    "next": "cookieSandwiches"
+  },
+  "cookieSandwiches": {
+    "img": "../assets/sandwich.png",
+    "name": "Cookie Sandwiches",
+    "desc": "Cookies as sandwiches!",
+    "upgr": 10,
+    "price": 500,
+    "next": "iceCreamSandwiches"
+  },
+  "iceCreamSandwiches": {
+    "img": "../assets/icecream_sandwich.jpg",
+    "name": "Ice Cream Sandwich",
+    "desc": "Add ice cream between cookies!",
+    "upgr": 20,
+    "price": 1250,
+    "next": "wholeWheat"
+  },
+  "wholeWheat": {
+    "img": "../assets/wheat.png",
+    "name": "Whole Wheat",
+    "desc": "Healthy whole wheat dough.",
+    "upgr": 35,
+    "price": 3000,
+    "next": "darkChocolate"
+  },
+  "darkChocolate": {
+    "img": "../assets/dark_chocolate.png",
+    "name": "Dark Chocolate",
+    "desc": "Deepen the chocolate flavor.",
+    "upgr": 50,
+    "price": 7500,
+    "next": "cream"
+  },
+  "cream": {
+    "img": "../assets/cream.svg",
+    "name": "Cookies w/Cream",
+    "desc": "Add some cream in cookies!",
+    "upgr": 75,
+    "price": 10000,
+    "next": "goldenCookie"
+  },
+  "goldenCookie": {
+    "img": "../assets/gold_cookie.png",
+    "name": "Golden Cookies",
+    "desc": "Limited Edition Cookies",
+    "upgr": 100,
+    "price": 20000,
+    "next": "portal"
+  },
+  "portal": {
+    "img": "../assets/portal.png",
+    "name": "Cookie Portal",
+    "desc": "Restart your journey.",
+    "down": 299,
+    "price": 0
+  },
+  
+  "Baker": {
+    "name": "Baker Employee",
+    "price": 100,
+    "scale": 20,
+    "upgr": 1,
+    "next": "salesman"
+  },
+  "Salesman": {
+    "name": "Cookie Salesman",
+    "price": 300,
+    "scale": 100,
+    "upgr": 5,
+    "next": "grandma"
+  },
+  "Grandma": {
+    "name": "Grandma",
+    "price": 1000,
+    "scale": 300,
+    "upgr": 10,
+    "next": "proBaker"
+  },
+  "ProBaker": {
+    "name": "Professional Baker",
+    "price": 2500,
+    "scale": 500,
+    "upgr": 20,
+    "next": "autoMaker"
+  },
+  "AutoMaker": {
+    "name": "Auto Cookie Maker",
+    "price": 6000,
+    "scale": 500,
+    "upgr": 50,
+    "next": "factory"
+  },
+  "Factory": {
+    "name": "Cookie Factory",
+    "price": 10000,
+    "scale": 1000,
+    "upgr": 75,
+    "next": "central"
+  },
+  "Central": {
+    "name": "G Cookie Central",
+    "price": 18000,
+    "scale": 2500,
+    "upgr": 100,
+    "next": "none"
+  }
+}

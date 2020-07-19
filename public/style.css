@@ -1,0 +1,88 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #19647E;
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+a {
+    color: darkgray;
+    text-decoration: none;
+    -webkit-user-drag: none;
+}
+
+a:hover {
+    color: lightgray;
+}
+
+img {
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+    background: darkslategray;
+}
+
+::-webkit-scrollbar-thumb {
+    background: gray;
+}
+
+/* header */
+
+.header {
+    display: block;
+    text-align: center;
+    background-color: #119DA4;
+    color: #1F2041;
+    font-size: 4rem;
+}
+
+/* sections */
+.sec {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.img {
+    margin-right: 2rem;
+    width: 30%;
+}
+
+.paragraph {
+    color: white;
+    width: 25rem;
+    font-size: 50px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
+}
+
+/* button */
+#clickCookies {
+    background-color: #FFC857;
+    border: 5px black solid;
+    width: 50%;
+    height: 5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1F2041;
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 7%;
+    margin-bottom: 5%;
+    outline: none;
+    cursor: pointer;
+}
+
+#clickCookies:hover {
+    background-color: #fad281;
+}
+
+#clickCookies:active {
+    background-color: #f1be58;
+}
