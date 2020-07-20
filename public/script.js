@@ -42,14 +42,104 @@ function init() {
   setInterval(() => {
     totalTime++;
     cookies += cps;
-    document.getElementById("timeTotal").innerHTML = `${Math.round(totalTime/60)}:${totalTime%60}`;
+    document.getElementById("timeTotal").innerHTML = `${Math.floor(totalTime/60)}:${totalTime%60}`;
+    if (totalTime%60 < 10) document.getElementById("timeTotal").innerHTML = `${Math.floor(totalTime/60)}:0${totalTime%60}`;
     document.getElementById("cookieCount").innerHTML = cookies;
   }, 1000)
   
+  // change user preference theme
   if (theme == "chocolate") {
     document.getElementById("themeIcon").classList.replace("fa-mug-hot", "fa-tint");
     document.body.classList.replace("water", "chocolate");
   }
+  
+  // load the game
+  loadGame();
+  updateInfo();
+  
+  // autosave every 30 seconds
+  setInterval(saveGame, 60000);
+}
+
+function saveGame() {
+  console.log("saved game");
+  
+  var info = {
+    'cpc': cpc,
+    'cps': cps,
+    'totalClicks': totalClicks,
+    'totalTime': totalTime,
+    'click': click,
+    'currentClick': currentClick,
+    'restarts': restarts
+  };
+ 
+  var helpers = {
+    'Baker': Baker,
+    'Salesman': Salesman,
+    'Grandma': Grandma,
+    'ProBaker': ProBaker,
+    'AutoMaker': AutoMaker,
+    'Factory': Factory,
+    'Central': Central
+  };
+  
+  console.log(JSON.stringify(info));
+  console.log(JSON.stringify(helpers));
+  
+  document.cookie = `cookies=${cookies}`;
+  document.cookie = `info=${JSON.stringify(info)}`;
+  document.cookie = `upgrades=${JSON.stringify(upgrades)}`;
+  document.cookie = `helpers=${JSON.stringify(helpers)}`;
+  
+  document.getElementById("saving").style.display = "block";
+  setTimeout(() => {
+    document.getElementById("saving").style.display = "none";
+  }, 3000);
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function loadGame() {
+  console.log("loaded game");
+  
+  // get cookie data
+  upgrades = JSON.parse(getCookie("upgrades"));
+  cookies = parseInt(getCookie("cookies"));
+  let info = JSON.parse(getCookie("info"));
+  let helpers = JSON.parse(getCookie("helpers"));
+  
+  // load info data
+  if (info["cpc"] > 0) cpc = parseInt(info["cpc"]);
+  if (info["cps"] > 0) cps = parseInt(info["cps"]);
+  if (info["totalClicks"] > 0) totalClicks = parseInt(info["totalClicks"]);
+  if (info["totalTime"] > 0) totalTime = parseInt(info["totalTime"]);
+  if (info["click"] > 0) click = parseInt(info["click"]);
+  if (info["currentClick"] != null) currentClick = info["currentClick"];
+  if (info["restarts"] > 0) restarts = parseInt(info["restarts"]);
+  
+  // load helpers data
+  if (helpers["Baker"] > 0) Baker = parseInt(helpers["Baker"]);
+  if (helpers["Salesman"] > 0) Salesman = parseInt(helpers["Salesman"]);
+  if (helpers["Grandma"]) Grandma = parseInt(helpers["Grandma"]);
+  if (helpers["ProBaker"]) ProBaker = parseInt(helpers["ProBaker"]);
+  if (helpers["AutoMaker"]) AutoMaker = parseInt(helpers["AutoMaker"]);
+  if (helpers["Factory"]) Factory = parseInt(helpers["Factory"]);
+  if (helpers["Central"]) Central = parseInt(helpers["Central"]);
 }
 
 function changeTheme() {
@@ -81,17 +171,20 @@ function hideSidebar() {
   const sidebar = document.getElementById("sidebar");
   const sbCookie = document.getElementById("sbCookie");
   const count = document.getElementById("cookieCount");
+  const bigCookie = document.getElementById("cookieDiv");
   
   if (inner.className == "hidden") {
     inner.classList.remove("hidden");
     sidebar.classList.replace("sbClosed", "sbOpen");
     sbCookie.classList.replace("c-icon-c", "c-icon");
     count.classList.replace("c-count-c", "c-count");
+    bigCookie.classList.remove("moveCookie");
   } else {
     inner.classList.add("hidden");
     sidebar.classList.replace("sbOpen", "sbClosed");
     sbCookie.classList.replace("c-icon", "c-icon-c");
     count.classList.replace("c-count", "c-count-c");
+    bigCookie.classList.add("moveCookie");
   }
 }
 

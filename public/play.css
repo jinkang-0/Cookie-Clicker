@@ -67,6 +67,29 @@ img {
     color: rgb(197, 184, 184);
 }
 
+/* game save */
+#saving {
+    color: var(--sidebar);
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+}
+
+#savingIcon {
+    animation: spin 3s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* modal boxes */
 .modal {
     width: 100%;
@@ -129,6 +152,11 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: width 200ms;
+}
+
+.moveCookie {
+    width: calc(100vw - 3.8rem);
 }
 
 #bigCookie {

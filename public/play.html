@@ -26,9 +26,15 @@
         
         <!-- theme switch -->
         <i onclick="changeTheme()" id="themeIcon" class="fas fa-mug-hot"></i>
-            
+        
+        <!-- game save -->
+        <div id="saving" style="display: none;">
+            <i id="savingIcon" class="fas fa-hourglass-half"></i>
+            <span style="margin-left: 0.3rem;">Saving...</span>
+        </div>
+        
         <!-- big cookie -->
-        <div class="cookie">
+        <div id="cookieDiv" class="cookie">
             <button id="bigCookie" onclick="addCookie()">
                 <img src="../assets/cookie.ico" alt="big cookie">
             </button>
