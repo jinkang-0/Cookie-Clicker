@@ -57,7 +57,7 @@ function init() {
   loadGame();
   updateInfo();
   
-  // autosave every 30 seconds
+  // autosave every minute
   setInterval(saveGame, 60000);
 }
 

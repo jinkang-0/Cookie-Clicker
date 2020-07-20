@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="style.css">
         
         <script src="https://kit.fontawesome.com/bf5b084248.js" crossorigin="anonymous"></script>
-        <script src="script.js"></script>
+        <script src="anim.js"></script>
     </head>
     
     <body>
@@ -19,17 +19,56 @@
         <!-- header -->
         <h1 class="header">COOKIE CLICKER</h1>
         
-        <!-- section 1 -->
-        <div class="sec" style="margin-right: 30%; margin-top: 100px;">
-            <img class="img" src="assets/cookie2.png" alt="cookie">
-            <p class="paragraph" style="text-align: left;">Click a cookie, get more cookies!</p>
+        <div class="hook">
+            <img src="assets/cookiebite.png" alt="cookie_bite.png">
+            <span style="width: 35%; text-align: center;">
+                Click a cookie to get more cookies!
+                <br> <br> <br> <br>
+                Get as many cookies as you can!
+            </span>
         </div>
         
-        <!-- section 2 -->
-        <div class="sec" style="margin-left: 25%; margin-top: 100px; margin-bottom: 100px;">
-            <p class="paragraph" style="text-align: right;">Use your cookies to get helpers, for even more cookies!</p>
-            <img src="assets/baker.svg" alt="helper" class="img">
+        <div class="features">
+            <h2>Features</h2>
+            <hr class="headingLine">
+            
+            <!-- hide sidebar -->
+            <div class="section" id="hide-bar">
+                <i class="fas fa-bars f-icon" style="color: orange;"></i>
+                <span class="intro-text">Hide the sidebar for intense clicking action!</span>
+            </div>
+            
+            <!-- auto-save -->
+            <div class="section" id="autosave">
+                <i class="fas fa-hourglass-half f-icon" style="color: #1F2041; margin-left: 0.5rem;"></i>
+                <span class="intro-text" style="margin-left: 2.8rem;">The game auto-saves every minute!</span>
+            </div>
+            
+            <!-- theme change -->
+            <div class="section" id="themeSwitch" onmouseover="iconSwitch()" onmouseout="clearSwitch()" style="transition: 250ms;">
+                <i id="themeIcon" class="fas fa-mug-hot f-icon mug"></i>
+                <span class="intro-text" style="margin-left: 1.8rem;">Change between water and hot chocolate themes!</span>
+            </div>
+            
         </div>
+        
+        <div class="upgrades">
+            <h2>Upgrades</h2>
+            <hr class="headingLine" style="right: 0;">
+            
+            <!-- click upgrade -->
+            <div class="section u-sec" style="justify-content: flex-end;">
+                <span class="u-text">Upgrade the taste of your cookies to... get more cookies!</span>
+                <img class="u-img" src="assets/chocolate.png" alt="chocolate.png">
+            </div>
+            
+            <!-- helpers -->
+            <div class="section u-sec" style="justify-content: flex-end;">
+                <span class="u-text">Hire helpers with cookies to bake more cookies!</span>
+                <img class="u-img" src="assets/baker.svg" alt="baker.svg">
+            </div>
+        </div>
+        
         
         <!-- redirect button -->
         <button id="clickCookies">

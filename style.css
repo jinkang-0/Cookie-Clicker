@@ -3,8 +3,8 @@ body {
     background-color: #19647E;
     margin: 0;
     padding: 0;
-    font-size: 24px;
-    text-align: center;
+    font-size: 36px;
+    color: white;
 }
 
 a {
@@ -41,26 +41,61 @@ img {
     font-size: 4rem;
 }
 
-/* sections */
-.sec {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5%;
-    margin-top: 5%;
+/* body */
+
+.hook {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-right: 15%;
 }
 
-.img {
+.features {
+    position: absolute;
+    left: 1.5rem;
+}
+
+.f-icon {
+    font-size: 10rem;
+}
+
+.upgrades {
+    position: absolute;
+    right: 1.5rem;
+    text-align: right;
+}
+
+.u-img {
+    width: 10rem;
+    margin-left: 0;
+    transition: 250ms;
+}
+
+.u-text {
+    width: 18rem;
+    font-size: 30px;
     margin-right: 2rem;
-    width: 30%;
 }
 
-.paragraph {
-    color: white;
-    width: 25rem;
-    font-size: 50px;
+.headingLine {
+    background-color: #4B3F72;
+    border: none;
+    height: 0.5rem;
+    position: absolute;
+    top: 5.5rem;
+    width: 30rem;
+}
+
+.intro-text {
+    width: 15rem;
+    font-size: 30px;
     margin-left: 2rem;
-    margin-right: 2rem;
-    margin-top: 2rem;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
 }
 
 /* button */
@@ -77,12 +112,84 @@ img {
     margin-bottom: 5%;
     outline: none;
     cursor: pointer;
+    position: absolute;
+    top: 100rem;
+    left: 25vw;
+    transition: 250ms;
 }
 
 #clickCookies:hover {
+    font-size: 3.3rem;
     background-color: #fad281;
 }
 
 #clickCookies:active {
     background-color: #f1be58;
+}
+
+/* animations */
+#hide-bar i {
+    transition: 250ms;
+}
+
+#hide-bar:hover i {
+    transform: rotate(-90deg);
+}
+
+#autosave:hover i {
+    animation: spinner 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.mug {
+    color: chocolate; 
+    font-size: 9rem; 
+    margin-top: 1rem;
+}
+
+.drop {
+    color: aqua;
+    font-size: 10rem;
+    margin-left: 0.5rem;
+    margin-right: 1.63rem;
+}
+
+#themeSwitch:hover .f-icon {
+    transform: scale(0.9);
+    animation: pop 520ms infinite;
+}
+
+.u-sec:hover .u-img {
+    transform: scale(1.1);
+}
+
+@keyframes pop {
+    from { transform: scale(0.9); }
+    50% { transform: scale(1.1); }
+    to { transform: scale(0.9); }
+}
+
+@keyframes spinner {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* adjust for smaller screen */
+@media (max-width: 1100px) {
+    .hook {
+        flex-direction: column;
+        margin-bottom: 10rem;
+        width: 100vw;
+    }
+    
+    .upgrades {
+        top: 125rem;
+    }
+    
+    #clickCookies {
+        top: 170rem;
+        left: 12vw;
+        width: 75%;
+    }
 }

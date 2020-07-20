@@ -76,7 +76,7 @@ img {
 }
 
 #savingIcon {
-    animation: spin 3s ease-in-out;
+    animation: spin 3s linear;
     animation-iteration-count: infinite;
 }
 
@@ -191,6 +191,7 @@ img {
 .sb_icon {
     color: white;
     font-size: 2rem;
+    transition: 250ms;
 }
 
 #sbIcon {
@@ -204,6 +205,10 @@ img {
     cursor: pointer;
     float: right;
     display: block;
+}
+
+#sbIcon:hover i {
+    transform: rotate(-90deg);
 }
 
 /* cookie counts */
