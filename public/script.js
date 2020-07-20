@@ -56,6 +56,7 @@ function init() {
   // load the game
   loadGame();
   updateInfo();
+  checkUpgrades();
   
   // autosave every minute
   setInterval(saveGame, 60000);
@@ -140,6 +141,29 @@ function loadGame() {
   if (helpers["AutoMaker"]) AutoMaker = parseInt(helpers["AutoMaker"]);
   if (helpers["Factory"]) Factory = parseInt(helpers["Factory"]);
   if (helpers["Central"]) Central = parseInt(helpers["Central"]);
+  
+  // re-unlock upgrades
+  let cc = currentClick;
+  changeCU(currentClick);
+  currentClick = cc;
+  
+  function test(item) {
+    if (window[item] > 0) {
+      console.log(`unlocked ${upgrades[item]["next"]}`);
+      var unlock = document.getElementsByClassName(`${upgrades[item]["next"]}`);
+      for (var i = 0; i < unlock.length; i++) {
+        unlock[i].style.display = "block";
+      }
+    }
+  }
+  
+  test("Baker");
+  test("Salesman");
+  test("Grandma");
+  test("ProBaker");
+  test("AutoMaker");
+  test("Factory");
+  test("Central");
 }
 
 function changeTheme() {
@@ -385,6 +409,8 @@ function restart() {
   upgrades;
   currentClick = "chocolateTouches";
 
+  totalTime = 0;
+  totalClicks = 0;
   Baker = 0;
   Salesman = 0;
   Grandma = 0;
@@ -419,4 +445,5 @@ function restart() {
   updateInfo();
   checkUpgrades();
   restarts++;
+  saveGame();
 }

@@ -1,10 +1,25 @@
 body {
     font-family: 'Ubuntu', sans-serif;
-    background-color: #19647E;
+    background-color: var(--background);
     margin: 0;
     padding: 0;
     font-size: 36px;
     color: white;
+    transition: background 200ms;
+}
+
+.water {
+    --background: #19647E;
+    --header: #1F2041;
+    --txt-background: #119DA4;
+    --line: #4B3F72;
+}
+
+.chocolate {
+    --background: #444444;
+    --header: #38ebf5;
+    --txt-background: #666666;
+    --line: #222222;
 }
 
 a {
@@ -31,14 +46,33 @@ img {
     background: gray;
 }
 
+/* theme switcher */
+#themeChanger {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 26px;
+    color: lightgray;
+    cursor: pointer;
+}
+
+#themeChanger:hover {
+    color: white;
+}
+
+#themeChanger:active {
+    color: rgb(167, 162, 162);
+}
+
 /* header */
 
 .header {
     display: block;
     text-align: center;
-    background-color: #119DA4;
-    color: #1F2041;
+    background-color: var(--txt-background);
+    color: var(--header);
     font-size: 4rem;
+    transition: color 200ms;
 }
 
 /* body */
@@ -78,7 +112,7 @@ img {
 }
 
 .headingLine {
-    background-color: #4B3F72;
+    background-color: var(--line);
     border: none;
     height: 0.5rem;
     position: absolute;
@@ -184,12 +218,20 @@ img {
     }
     
     .upgrades {
-        top: 125rem;
+        top: 135rem;
     }
     
     #clickCookies {
         top: 170rem;
         left: 12vw;
         width: 75%;
+    }
+}
+
+@media (max-width: 700px) {
+    #clickCookies {
+        width: 96vw;
+        top: 175rem;
+        left: 2vw;
     }
 }

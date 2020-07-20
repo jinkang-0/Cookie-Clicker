@@ -38,6 +38,7 @@ img {
     --sidebar: #4B3F72;
     --tab: #19647E;
     --cookie: brown;
+    --lighter: #1bc8d1;
 }
 
 .chocolate {
@@ -45,6 +46,7 @@ img {
     --sidebar: #333333;
     --tab: darkslategray;
     --cookie: chocolate;
+    --lighter: #777777;
 }
 
 /* theme switch */
@@ -73,11 +75,13 @@ img {
     position: absolute;
     bottom: 1rem;
     left: 1rem;
+    -webkit-user-select: none;
 }
 
 #savingIcon {
     animation: spin 3s linear;
     animation-iteration-count: infinite;
+    -webkit-user-select: none;
 }
 
 @keyframes spin {
@@ -129,8 +133,9 @@ img {
     color: lightgray;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    font-size: 1.3rem;
     outline: none;
     font-family: 'Ubuntu', sans-serif;
     cursor: pointer;
@@ -418,6 +423,54 @@ img {
     display: none;
 }
 
+#restartBtn {
+    color: lightgray;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: crimson;
+    border: 2px black solid;
+    width: 8rem;
+    height: 2rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    outline: none;
+}
+
+#restartBtn:hover {
+    background-color: red;
+}
+
+#restartBtn:active {
+    background-color: rgb(197, 21, 21);
+}
+
+#saveBtn {
+    color: lightgray;
+    background-color: var(--background);
+    border: 2px black solid;
+    width: 8rem;
+    height: 2rem;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 20px;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    cursor: pointer;
+    outline: none;
+}
+
+#saveBtn:hover {
+    background-color: var(--lighter);
+}
+
+#saveBtn:active {
+    background-color: var(--sidebar);
+}
+
 /* media queries */
 
 @media (max-width: 750px) {
@@ -484,4 +537,5 @@ img {
         background-color: var(--tab);
         height: auto;
     }
+    
 }
