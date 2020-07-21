@@ -37,7 +37,7 @@ img {
     --background: #119DA4;
     --sidebar: #4B3F72;
     --tab: #19647E;
-    --cookie: brown;
+    --cookie: rgb(173, 88, 28);
     --lighter: #1bc8d1;
 }
 
@@ -164,15 +164,12 @@ img {
 
 #bigCookie {
     border-radius: 50%;
-    border: none;
-    background: none;
-    outline: none;
-    display: block;
-    height: 20rem;
+    height: 50%;
 }
 
 #bigCookie img {
     height: 100%;
+    border-radius: 50%;
 }
 
 #bigCookie:active img {
