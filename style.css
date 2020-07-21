@@ -61,8 +61,8 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: 100;
     -webkit-user-select: none;
 }
@@ -75,12 +75,30 @@ img {
     text-align: center;
     border: 2px black solid;
     border-radius: 10%;
-    padding-top: 2rem;
     animation: popup 700ms;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cookieWarning h5 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cookieWarning span {
+    font-size: 24px;
+}
+
+.cookieButtons {
+    margin-top: 2rem;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .cookieBtn {
-    width: 8rem;
+    width: 30%;
     height: 3rem;
     background-color: darkslategray;
     color: white;
@@ -101,18 +119,6 @@ img {
 
 .cookieBtn:focus {
     outline: none;
-}
-
-#acceptCookies {
-    position: relative;
-    top: 3rem;
-    right: 2rem;
-}
-
-#declineCookies {
-    position: relative;
-    top: 2.5rem;
-    left: 2rem;
 }
 
 /* theme switcher */
@@ -151,6 +157,15 @@ img {
     justify-content: center; 
     align-items: center; 
     margin-right: 15%;
+}
+
+.hook img {
+    width: 50%;
+}
+
+.hook span {
+    width: 35%;
+    text-align: center;
 }
 
 .features {
@@ -200,38 +215,37 @@ img {
 
 /* button */
 #clickCookies {
-    background-color: #FFC857;
-    border: 5px black solid;
-    width: 40rem;
+    width: 100%;
     height: 5rem;
     font-size: 3rem;
     font-weight: bold;
-    color: #1F2041;
-    margin-bottom: 5rem;
     outline: none;
-    cursor: pointer;
     
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     
-    margin-left: 24%;
     margin-top: 10rem;
+    margin-bottom: 10rem;
 }
 
-#clickTxt {
+#clickCookies a {
     transition: 250ms;
+    color: #1F2041;
+    background-color: #FFC857;
+    border: 5px black solid;
+    padding: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    cursor: pointer;
 }
 
-#clickCookies:hover #clickTxt {
+#clickCookies a:hover {
     transform: scale(1.1);
-}
-
-#clickCookies:hover {
     background-color: #fad281;
 }
 
-#clickCookies:active {
+#clickCookies a:active {
     background-color: #f1be58;
 }
 
@@ -325,19 +339,23 @@ img {
 @media (max-width: 1000px) {
     .upgrades, .features {
         display: block;
-        width: 90%;
+        width: 80%;
+        margin-bottom: 12rem;
     }
     
     .hook {
         flex-direction: column;
         margin-bottom: 10rem;
         width: 100%;
+        margin-right: 0px;
+    }
+    
+    .hook img, .hook span {
+        width: 50%;
     }
     
     #clickCookies {
-        width: 30rem;
         font-size: 2.5rem;
-        margin-left: 24%;
     }
     
     #resourceBtn {
@@ -347,8 +365,25 @@ img {
 
 @media (max-width: 700px) {
     #clickCookies {
-        width: 22rem;
-        font-size: 2.2rem;
-        margin-left: calc(24vw - 10%);
+        font-size: 2rem;
+    }
+    
+    .upgrades, .features {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 10rem;
+        text-align: center;
+    }
+    
+    .hook img {
+        width: 80%;
+    }
+}
+
+@media (max-width: 500px) {
+    .cookieWarning {
+        height: auto;
+        padding-bottom: 2rem;
     }
 }

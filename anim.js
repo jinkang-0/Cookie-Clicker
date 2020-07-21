@@ -16,7 +16,6 @@ function iconSwitch() {
 }
 
 function clearSwitch() {
-  console.log("mouse out");
   clearInterval(themeSwitcher);
   const icon = document.getElementById("themeIcon");
   if (icon.classList.contains("fa-tint")) {

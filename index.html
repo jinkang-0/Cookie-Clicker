@@ -19,10 +19,13 @@
         
         <div id="cookieOverlay" style="display: flex;">
             <div class="cookieWarning">
-                <span>This website uses cookies!</span>
-                <span style="color: lightgray; font-size: 24px;">We use cookies to save your game data.</span>
-                <button id="acceptCookies" class="cookieBtn" onclick="acceptCookies()">Got it!</button>
-                <button id="declineCookies" class="cookieBtn" onclick="declineCookies()">Don't use cookies.</button>
+                <h5>This website uses cookies!</h5>
+                <span>We use cookies to save your game data.</span>
+                
+                <div class="cookieButtons">
+                    <button id="acceptCookies" class="cookieBtn" onclick="acceptCookies()">Got it!</button>
+                    <button id="declineCookies" class="cookieBtn" onclick="declineCookies()">Don't use cookies.</button>
+                </div>
             </div>
         </div>
         
@@ -33,7 +36,7 @@
         
         <div class="hook">
             <img src="assets/cookiebite.png" alt="cookie_bite.png">
-            <span style="width: 35%; text-align: center;">
+            <span>
                 Click a cookie to get more cookies!
                 <br> <br> <br> <br>
                 Get as many cookies as you can!
@@ -80,9 +83,11 @@
         </div>
         
         <!-- redirect button -->
-        <a id="clickCookies" href="public/play.html">
-            <span id="clickTxt">START CLICKING!</span>
-        </a>
+        <div id="clickCookies">
+            <a href="public/play.html">
+                <span>START CLICKING!</span>
+            </a>
+        </div>
         
         <!-- resources page -->
         <div class="resources">
