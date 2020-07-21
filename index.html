@@ -15,7 +15,16 @@
         <script src="anim.js"></script>
     </head>
     
-    <body onload="detectTheme()" class="water">
+    <body onload="init()" class="water">
+        
+        <div id="cookieOverlay" style="display: flex;">
+            <div class="cookieWarning">
+                <span>This website uses cookies!</span>
+                <span style="color: lightgray; font-size: 24px;">We use cookies to save your game data.</span>
+                <button id="acceptCookies" class="cookieBtn" onclick="acceptCookies()">Got it!</button>
+                <button id="declineCookies" class="cookieBtn" onclick="declineCookies()">Don't use cookies.</button>
+            </div>
+        </div>
         
         <i class="fas fa-mug-hot" id="themeChanger" onclick="changeTheme()"></i>
         

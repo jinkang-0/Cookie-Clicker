@@ -7,8 +7,9 @@ var click = 0;
 let upgrades;
 let currentClick = "chocolateTouches";
 
-// theme
+// theme & cookie use
 var theme = localStorage.getItem("theme");
+var useCookies = localStorage.getItem("useCookies");
 
 // # of helpers
 var Baker = 0;
@@ -53,13 +54,18 @@ function init() {
     document.body.classList.replace("water", "chocolate");
   }
   
-  // load the game
-  loadGame();
-  updateInfo();
-  checkUpgrades();
-  
-  // autosave every minute
-  setInterval(saveGame, 60000);
+  if (useCookies == "true") {
+    // load the game
+    loadGame();
+    updateInfo();
+    checkUpgrades();
+   
+    // autosave every minute
+    setInterval(saveGame, 60000);
+  } else {
+    // remove save button
+    document.getElementById("saveBtn").style.display = "none";
+  }
 }
 
 function saveGame() {

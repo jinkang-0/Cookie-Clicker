@@ -25,7 +25,7 @@ function clearSwitch() {
   } 
 }
 
-function detectTheme() {
+function init() {
   if (theme == "chocolate") {
     document.body.classList.replace("water", "chocolate");
     document.getElementById("themeChanger").classList.replace("fa-mug-hot", "fa-tint");
@@ -33,6 +33,13 @@ function detectTheme() {
   if (theme == "null") {
     localStorage.setItem("theme", "water");
     theme = "water";
+  }
+  
+  let useCookies = localStorage.getItem("useCookies");
+  if (useCookies == "true") {
+    document.getElementById("cookieOverlay").style.display = "none";
+  } else {
+    document.getElementById("cookieOverlay").style.display = "flex";
   }
 }
 
@@ -50,4 +57,14 @@ function changeTheme() {
   }
   
   theme = localStorage.getItem("theme");
+}
+
+function acceptCookies() {
+  localStorage.setItem("useCookies", true);
+  document.getElementById("cookieOverlay").style.display = "none";
+}
+
+function declineCookies() {
+  localStorage.setItem("useCookies", false);
+  document.getElementById("cookieOverlay").style.display = "none";
 }

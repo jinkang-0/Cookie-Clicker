@@ -46,6 +46,75 @@ img {
     background: gray;
 }
 
+/* cookie warning */
+@keyframes popup {
+    from { transform: scale(0) }
+    40% { transform: scale(1.2) }
+    to { transform: scale(1) }
+}
+
+#cookieOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    -webkit-user-select: none;
+}
+
+.cookieWarning {
+    height: 14rem;
+    width: 30rem;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    border: 2px black solid;
+    border-radius: 10%;
+    padding-top: 2rem;
+    animation: popup 700ms;
+}
+
+.cookieBtn {
+    width: 8rem;
+    height: 3rem;
+    background-color: darkslategray;
+    color: white;
+    font-family: inherit;
+    outline: none;
+    cursor: pointer;
+    border: 2px black solid;
+    border-radius: 5%;
+}
+
+.cookieBtn:hover {
+    background-color: rgb(60, 102, 102);
+}
+
+.cookieBtn:active {
+    background-color: rgb(34, 58, 58);
+}
+
+.cookieBtn:focus {
+    outline: none;
+}
+
+#acceptCookies {
+    position: relative;
+    top: 3rem;
+    right: 2rem;
+}
+
+#declineCookies {
+    position: relative;
+    top: 2.5rem;
+    left: 2rem;
+}
+
 /* theme switcher */
 #themeChanger {
     position: absolute;
