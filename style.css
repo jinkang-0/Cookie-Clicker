@@ -154,8 +154,8 @@ img {
 }
 
 .features {
-    position: absolute;
-    left: 1.5rem;
+    margin-left: 1.5rem;
+    display: inline-block;
 }
 
 .f-icon {
@@ -163,9 +163,9 @@ img {
 }
 
 .upgrades {
-    position: absolute;
-    right: 1.5rem;
+    margin-right: 1.5rem;
     text-align: right;
+    float: right;
 }
 
 .u-img {
@@ -180,13 +180,10 @@ img {
     margin-right: 2rem;
 }
 
-.headingLine {
-    background-color: var(--line);
-    border: none;
-    height: 0.5rem;
-    position: absolute;
-    top: 5.5rem;
-    width: 30rem;
+.heading {
+    border-bottom: 15px solid;
+    border-color: var(--line);
+    width: 100%;
 }
 
 .intro-text {
@@ -205,20 +202,21 @@ img {
 #clickCookies {
     background-color: #FFC857;
     border: 5px black solid;
-    width: 50%;
-    height: 18%;
+    width: 40rem;
+    height: 5rem;
     font-size: 3rem;
     font-weight: bold;
     color: #1F2041;
-    margin-bottom: 5%;
+    margin-bottom: 5rem;
     outline: none;
     cursor: pointer;
-    position: absolute;
-    top: 100rem;
-    left: 25vw;
-    display: flex;
+    
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    
+    margin-left: 24%;
+    margin-top: 10rem;
 }
 
 #clickTxt {
@@ -226,7 +224,7 @@ img {
 }
 
 #clickCookies:hover #clickTxt {
-    font-size: 3.3rem;
+    transform: scale(1.1);
 }
 
 #clickCookies:hover {
@@ -240,8 +238,6 @@ img {
 /* resources */
 
 .resources {
-    position: absolute;
-    top: 115rem;
     width: 100%;
     height: auto;
     background-color: var(--line);
@@ -259,10 +255,9 @@ img {
     width: 30%;
     height: 5rem;
     background-color: #111111;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-left: 35%;
     margin-bottom: 50px;
 }
 
@@ -327,37 +322,32 @@ img {
 }
 
 /* adjust for smaller screen */
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
+    .upgrades, .features {
+        display: block;
+        width: 90%;
+    }
+    
     .hook {
         flex-direction: column;
         margin-bottom: 10rem;
-        width: 100vw;
-    }
-    
-    .upgrades {
-        top: 135rem;
+        width: 100%;
     }
     
     #clickCookies {
-        top: 170rem;
-        left: 12vw;
-        width: 75%;
-    }
-    
-    .resources {
-        top: 185rem;
+        width: 30rem;
+        font-size: 2.5rem;
+        margin-left: 18%;
     }
     
     #resourceBtn {
         width: 50%;
-        margin-left: 25%;
     }
 }
 
 @media (max-width: 700px) {
     #clickCookies {
-        width: 96vw;
-        top: 175rem;
-        left: 2vw;
+        width: 22rem;
+        font-size: 2.2rem;
     }
 }
