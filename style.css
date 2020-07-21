@@ -206,28 +206,76 @@ img {
     background-color: #FFC857;
     border: 5px black solid;
     width: 50%;
-    height: 5rem;
+    height: 18%;
     font-size: 3rem;
     font-weight: bold;
     color: #1F2041;
-    font-family: 'Ubuntu', sans-serif;
-    margin-top: 7%;
     margin-bottom: 5%;
     outline: none;
     cursor: pointer;
     position: absolute;
     top: 100rem;
     left: 25vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#clickTxt {
     transition: 250ms;
 }
 
-#clickCookies:hover {
+#clickCookies:hover #clickTxt {
     font-size: 3.3rem;
+}
+
+#clickCookies:hover {
     background-color: #fad281;
 }
 
 #clickCookies:active {
     background-color: #f1be58;
+}
+
+/* resources */
+
+.resources {
+    position: absolute;
+    top: 115rem;
+    width: 100%;
+    height: auto;
+    background-color: var(--line);
+    text-align: center;
+}
+
+.resourceTxt {
+    width: 50%;
+    color: lightgray;
+    font-size: 28px;
+    display: inline-block;
+}
+
+#resourceBtn {
+    width: 30%;
+    height: 5rem;
+    background-color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 35%;
+    margin-bottom: 50px;
+}
+
+#resourceBtn:hover {
+    background-color: #181818;
+}
+
+#resourceBtn span {
+    transition: 250ms;
+}
+
+#resourceBtn:hover {
+    font-size: 40px;
 }
 
 /* animations */
@@ -294,6 +342,15 @@ img {
         top: 170rem;
         left: 12vw;
         width: 75%;
+    }
+    
+    .resources {
+        top: 185rem;
+    }
+    
+    #resourceBtn {
+        width: 50%;
+        margin-left: 25%;
     }
 }
 

@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  font-size: 24px;
+  transition: background-color 200ms;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+}
+
+a {
+  color: lightgray;
+  text-decoration: none;
+}
+
+a:hover {
+  color: darkgray;
+  text-decoration: underline;
+}
+
+.water {
+  --background: #19647E;
+  --header: #1F2041;
+  --txt-background: #119DA4;
+  --img-background: #4B3F72;
+  --img-hover: #51447c;
+}
+
+.chocolate {
+  --background: #444444;
+  --header: #38ebf5;
+  --txt-background: #666666;
+  --img-background: #333333;
+  --img-hover: #3d3d3d;
+}
+
+/* theme changer */
+
+#themeChanger {
+  color: lightgray;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  cursor: pointer;
+}
+
+#themeChanger:hover {
+  color: white;
+}
+
+/* redirect */
+#redirect {
+  transform: scale(1.3);
+  margin-left: 42%;
+  margin-bottom: 5rem;
+  width: 12rem;
+  height: 2.5rem;
+  background-color: var(--img-background);
+  border: 2px black solid;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  transition: 200ms;
+}
+
+#redirect:hover {
+  background-color: var(--img-hover);
+  text-decoration: none;
+  transform: scale(1.4);
+}
+
+/* body */
+.header {
+  margin-top: 2.5rem;
+  margin-bottom: 3rem;
+  font-size: 60px;
+  text-align: center;
+  color: var(--header);
+  background-color: var(--txt-background);
+  display: block;
+}
+
+.icon {
+  width: 100%;
+  border: 2px #1F2041 solid;
+  background-color: var(--img-background);
+  cursor: pointer;
+}
+
+.icon:hover {
+  background-color: var(--img-hover);
+}
+
+.container {
+  margin-bottom: 3rem;
+}

@@ -325,7 +325,7 @@ img {
     height: auto;
     object-fit: cover;
     border: 2px #1F2041 solid;
-    background-color: #4B3F72;
+    background-color: var(--sidebar);
 }
 
 .upgrName {

@@ -24,7 +24,7 @@
     "next": "cookieSandwiches"
   },
   "cookieSandwiches": {
-    "img": "../assets/sandwich.png",
+    "img": "../assets/sandwich2.png",
     "name": "Cookie Sandwiches",
     "desc": "Cookies as sandwiches!",
     "upgr": 10,
