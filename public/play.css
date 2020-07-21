@@ -501,9 +501,10 @@ img {
         display: none;
     }
     
-    .sbClosed {
+    .sbClosed, .sbOpen {
         background-color: var(--sidebar);
         grid-area: right;
+        padding-top: 5px;
         width: 30%;
         height: 100vh;
         transition: width 200ms;
@@ -516,22 +517,20 @@ img {
         display: block;
     }
     
-    .c-icon-c {
+    .c-icon-c, .c-icon {
         color: chocolate;
-        margin-top: 0.5rem;
-        margin-left: 0.5rem;
         font-size: 2rem;
-        position: relative;
-        left: 0;
+        position: absolute;
+        right: 5px;
+        bottom: calc(100% + 94vh);
     }
     
-    .c-count-c {
-        margin-top: 0.7rem;
-        margin-left: 0.3rem;
+    .c-count-c, .c-count {
         color: white;
         text-align: right;
-        position: relative;
-        left: 0;
+        position: absolute;
+        right: calc(10px + 2rem);
+        bottom: calc(100% + 94.2vh);
     }
     
     .cookie {
@@ -549,7 +548,7 @@ img {
     }
     
     .tab {
-        min-height: calc(100vh - 7.5rem);
+        min-height: calc(100vh - 4rem);
         padding: 0.8rem;
         background-color: var(--tab);
         height: auto;
