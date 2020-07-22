@@ -46,6 +46,7 @@ function init() {
     document.getElementById("timeTotal").innerHTML = `${Math.floor(totalTime/60)}:${totalTime%60}`;
     if (totalTime%60 < 10) document.getElementById("timeTotal").innerHTML = `${Math.floor(totalTime/60)}:0${totalTime%60}`;
     document.getElementById("cookieCount").innerHTML = cookies;
+    checkUpgrades();
   }, 1000)
   
   // change user preference theme
@@ -451,5 +452,8 @@ function restart() {
   updateInfo();
   checkUpgrades();
   restarts++;
-  saveGame();
+  
+  if (useCookies == "true") {
+    saveGame();
+  }
 }

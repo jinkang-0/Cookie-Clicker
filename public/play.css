@@ -366,6 +366,7 @@ img {
     color: #1F2041;
     outline: none;
     cursor: pointer;
+    -webkit-user-select: none;
 }
 
 .buyUpgrDisabled {
@@ -379,6 +380,7 @@ img {
     font-weight: 600;
     color: #1F2041;
     outline: none;
+    -webkit-user-select: none;
     
     cursor: default;
     background-color: rgb(63, 99, 99);
